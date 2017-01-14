@@ -1,0 +1,38 @@
+{
+  "name": "babel-helper-remap-koa2-async-to-generator",
+  "version": "0.0.0-development",
+  "description": "",
+  "repository": "https://bitbucket.org/gerardopp/babel-helper-remap-koa2-async-to-generator",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "scripts": {
+    "commit": "git add -A & git-cz",
+    "convert": "babel src/index.js --out-file lib/index.js",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
+  "keywords": [
+    "babel-plugin"
+  ],
+  "dependencies": {
+    "babel-runtime": "^6.0.0",
+    "babel-template": "^6.8.0",
+    "babel-types": "^6.8.0",
+    "babel-traverse": "^6.8.0",
+    "babel-helper-function-name": "^6.8.0"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.18.0",
+    "commitizen": "^2.9.5",
+    "cz-conventional-changelog": "^1.2.0",
+    "semantic-release": "^6.3.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "files": [
+    "README.md",
+    "lib/index.js"
+  ]
+}

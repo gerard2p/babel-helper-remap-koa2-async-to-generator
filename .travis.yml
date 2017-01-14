@@ -1,0 +1,19 @@
+---
+branches:
+  only:
+    - master
+language: node_js
+node_js:
+  - "6.9.2"
+sudo: false
+cache:
+  directories:
+    - node_modules
+before_install:
+  - npm config set spin false
+  - npm install -g babel-cli
+install:
+  - npm i .
+script:
+  - npm run convert
+  - npm run semantic-release
