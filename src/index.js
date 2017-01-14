@@ -37,7 +37,7 @@ var awaitVisitor = {
 	}
 };
 
-function plainFunction (path, callId) {
+export default function (path, callId) {
 	var node = path.node;
 	var isKoa2 = node.async && node.params.length > 0 && node.params[0].name === 'ctx';
 	if (path.isArrowFunctionExpression() && node.params.length > 0 && node.params[0].name === 'ctx' && node.params[1].name === 'next') {
@@ -56,8 +56,4 @@ function plainFunction (path, callId) {
 	if (isKoa2) {
 		delete node.params[0];
 	}
-}
-
-export default function (path, callId) {
-	return plainFunction(path.node, callId);
 }
