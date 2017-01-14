@@ -2,7 +2,7 @@
   "name": "babel-helper-remap-koa2-async-to-generator",
   "version": "0.0.0-development",
   "description": "",
-  "repository": "https://bitbucket.org/gerardopp/babel-helper-remap-koa2-async-to-generator",
+  "repository": "https://github.com/gerard2p/babel-helper-remap-koa2-async-to-generator",
   "license": "MIT",
   "main": "lib/index.js",
   "scripts": {
