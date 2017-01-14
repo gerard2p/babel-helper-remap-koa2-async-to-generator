@@ -9,7 +9,6 @@ $ npm install babel-helper-remap-koa2-async-to-generator
 ```
 
 ## Usage
-
 ### Via `.babelrc` (Recommended)
 
 **.babelrc**
