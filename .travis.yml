@@ -15,5 +15,6 @@ before_install:
 install:
   - npm i .
 script:
+  - mkdir lib
   - npm run convert
   - npm run semantic-release
