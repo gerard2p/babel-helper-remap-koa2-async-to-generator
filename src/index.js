@@ -52,6 +52,5 @@ function plainFunction (path, callId) {
 }
 
 export default function (path, callId) {
-  var node = path.node;
-  return plainFunction(path, callId);
+  return plainFunction(path.node, callId);
 };
