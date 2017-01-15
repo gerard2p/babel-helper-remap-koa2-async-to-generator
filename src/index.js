@@ -40,20 +40,21 @@ var awaitVisitor = {
 export default function (path, callId) {
 	var node = path.node;
 	var isKoa2 = node.async && node.params.length > 0 && node.params[0].name === 'ctx';
-	if (path.isArrowFunctionExpression() && node.params.length > 0 && node.params[0].name === 'ctx' && node.params[1].name === 'next') {
+	if (path.isArrowFunctionExpression() && node.params.length > 0 && node.params[0].name === 'ctx' && node.params[1] && node.params[1].name === 'next') {
 		path.arrowFunctionToShadowed();
 		node = path.node;
-		node.async = false;
-		node.generator = true;
+		node.async = true;
 		isKoa2 = true;
+	}
+	if(!isKoa2 && !node.async){
+		return;
 	}
 	path.traverse(awaitVisitor);
 	if (path.isArrowFunctionExpression()) {
 		path.arrowFunctionToShadowed();
 	}
-	node.generator = true;
+	node.generator = node.async;
 	node.async = false;
 	if (isKoa2) {
 		delete node.params[0];
-	}
-}
+	}}
